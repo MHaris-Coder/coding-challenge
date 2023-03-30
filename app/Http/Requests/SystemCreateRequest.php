@@ -28,10 +28,10 @@ class SystemCreateRequest extends FormRequest
     {
         return [
             'unit_type_id' => 'required',
-            'input_numerical_value' => 'required',
+            'input_numerical_value' => 'required|numeric|min:1|max:100000',
             'convert_from' => 'required',
             'convert_to' => 'required',
-            'student_response' => 'required',
+            'student_response' => 'required|numeric|min:1|max:100000'
         ];
     }
 }
