@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\UserGame;
 use Carbon\Carbon;
 use App\Http\Requests\AttemptLoginRequest;
 use App\Helper\APIresponse;
