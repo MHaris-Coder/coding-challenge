@@ -45,7 +45,7 @@ class AuthController extends Controller
         try {
             $user = Auth::user()->tokens()->delete();
             if($user)
-                return APIresponse::success('Logout Success!', []);
+                return APIresponse::success('Logout Successfully!', []);
             else
                 return APIresponse::error('Already Logout!', []);
             
