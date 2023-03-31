@@ -25,12 +25,12 @@ class AuthController extends Controller
             $verifyPass = Hash::check($request->pass, $findUser->password);
             if(!$verifyPass) return APIresponse::error('Password Incorrect!', []);
             
-            if (!Auth::attempt($credentials)) return APIresponse::error('Algo Deu Errado!', []);
+            if (!Auth::attempt($credentials)) return APIresponse::error('Credentails Does Not Match!', []);
 
             $user = $request->user();
             $tokenResult = $user->createToken('Personal Access Token');
 
-            return APIresponse::success('Login com sucesso!', [
+            return APIresponse::success('Login Successfully!', [
                 'access_token' => $tokenResult->plainTextToken,
                 'token_type' => 'Bearer',
                 'user' => $findUser
