@@ -12,12 +12,22 @@
     MIX_API_URL=http://127.0.0.1:8000/api/
 
 - Set the database in the .env file and run the below commands
+    ```bash
     composer install
+    ```
+    ```bash
     npm install (Currently I'm using node v18.12.1)
+    ```
+    ```bash
     php artisan migrate
+    ```
+    ```bash
     php artisan db:seed
+    ```
+    ```bash
     npm run watch
-
+    ```
+    
 
 ## Guideline For Deployment
 
