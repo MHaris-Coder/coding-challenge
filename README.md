@@ -30,8 +30,23 @@
     MIX_API_URL=https://something.com/api/
 
 - Set the database in the .env file and run the below commands
-    composer install (This command will be run locally one time)
-    npm install (This command will be run locally one time)
-    php artisan migrate (This can be depend on you, if you want to create blank database on live server so you should run on the live)
-    php artisan db:seed (This can also dependent)
-    npm run prod (This command will run locally and will upload the public/js files on live server path => public/js)
+    (This command will be run locally one time)
+    ```bash
+        composer install 
+    ```
+    (This command will be run locally one time)
+    ```bash
+        npm install 
+    ```
+    (This can be depend on you, if you want to create blank database on live server so you should run on the live)
+    ```bash
+        php artisan migrate 
+    ```
+    (This can also dependent)
+    ```bash
+    php artisan db:seed
+    ```
+    (This command will run locally and will upload the public/js files on live server path => public/js)
+    ```bash
+    npm run prod
+    ```
