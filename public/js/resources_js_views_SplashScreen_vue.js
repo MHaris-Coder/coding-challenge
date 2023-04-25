@@ -118,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SplashScreen_vue_vue_type_template_id_ae4df65c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SplashScreen.vue?vue&type=template&id=ae4df65c */ "./resources/js/views/SplashScreen.vue?vue&type=template&id=ae4df65c");
 /* harmony import */ var _SplashScreen_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SplashScreen.vue?vue&type=script&lang=js */ "./resources/js/views/SplashScreen.vue?vue&type=script&lang=js");
 /* harmony import */ var _SplashScreen_vue_vue_type_style_index_0_id_ae4df65c_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SplashScreen.vue?vue&type=style&index=0&id=ae4df65c&lang=css */ "./resources/js/views/SplashScreen.vue?vue&type=style&index=0&id=ae4df65c&lang=css");
-/* harmony import */ var C_laragon_www_coding_challenge_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var F_laragon_www_coding_challenge_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_laragon_www_coding_challenge_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SplashScreen_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SplashScreen_vue_vue_type_template_id_ae4df65c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/SplashScreen.vue"]])
+const __exports__ = /*#__PURE__*/(0,F_laragon_www_coding_challenge_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SplashScreen_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SplashScreen_vue_vue_type_template_id_ae4df65c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/SplashScreen.vue"]])
 /* hot reload */
 if (false) {}
 

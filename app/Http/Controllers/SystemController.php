@@ -53,6 +53,7 @@ class SystemController extends Controller
 
             $replace = str_replace('{{value}}', $inputNumericalValue, $unitConversion->formula);
             $convertedNumericalValue = eval('return '.$replace.';');
+            $convertedNumericalValue = (float)number_format((float)$convertedNumericalValue, 2, '.', '');
 
             /********** Unit Conversion Response Has Isolated Data (Only For view) **********/
             $unitType = UnitType::select('name')->find($unitTypeId);
