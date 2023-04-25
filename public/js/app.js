@@ -23228,14 +23228,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SplashScreen"], {
-    isLoading: $setup.isLoading
-  }, null, 8
-  /* PROPS */
-  , ["isLoading"]), !$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["RouterView"], {
-    key: 0
-  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
-  /* STABLE_FRAGMENT */
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SplashScreen :isLoading=\"isLoading\" />\r\n  <RouterView v-if=\"!isLoading\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RouterView"])], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
 
@@ -23385,8 +23379,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-(axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.headers.common.Authorization) = "Bearer ".concat(localStorage.getItem('token')); // Create a new store instance.
+ // Create a new store instance.
 
 var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.createStore)({
   modules: {
@@ -23412,12 +23405,13 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.createStore)({
     setLoading: function setLoading(state, payload) {
       state.LOADING = payload;
     },
-    setUserDetails: function setUserDetails(state, payload) {
+    setAuthInfo: function setAuthInfo(state, payload) {
       state.user.loggedIn = true;
       state.user.details = payload === null || payload === void 0 ? void 0 : payload.user;
       state.token = payload === null || payload === void 0 ? void 0 : payload.access_token;
       localStorage.setItem('token', payload === null || payload === void 0 ? void 0 : payload.access_token);
       localStorage.setItem('user_details', JSON.stringify(payload === null || payload === void 0 ? void 0 : payload.user));
+      (axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.headers.common.Authorization) = "Bearer ".concat(payload === null || payload === void 0 ? void 0 : payload.access_token);
     },
     setUnauthenticated: function setUnauthenticated() {
       localStorage.removeItem('token');
@@ -23439,7 +23433,7 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.createStore)({
         axios__WEBPACK_IMPORTED_MODULE_0___default().post("http://coding-challenge.test/api/" + 'login', payload).then(function (resp) {
           var _resp$data, _resp$data2;
 
-          commit('setUserDetails', resp === null || resp === void 0 ? void 0 : (_resp$data = resp.data) === null || _resp$data === void 0 ? void 0 : _resp$data.data);
+          commit('setAuthInfo', resp === null || resp === void 0 ? void 0 : (_resp$data = resp.data) === null || _resp$data === void 0 ? void 0 : _resp$data.data);
           dispatch('successToast', resp === null || resp === void 0 ? void 0 : (_resp$data2 = resp.data) === null || _resp$data2 === void 0 ? void 0 : _resp$data2.msg);
           _router__WEBPACK_IMPORTED_MODULE_2__["default"].push('/dashboard');
           resolve(resp === null || resp === void 0 ? void 0 : resp.data);
@@ -23507,7 +23501,7 @@ var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.createStore)({
         axios__WEBPACK_IMPORTED_MODULE_0___default().post("http://coding-challenge.test/api/" + 'system', payload).then(function (resp) {
           var _resp$data5;
 
-          // commit('setUserDetails', resp?.data?.data)
+          // commit('setAuthInfo', resp?.data?.data)
           dispatch('successToast', resp === null || resp === void 0 ? void 0 : (_resp$data5 = resp.data) === null || _resp$data5 === void 0 ? void 0 : _resp$data5.msg);
           resolve(resp === null || resp === void 0 ? void 0 : resp.data);
         })["catch"](function (err) {

@@ -3,7 +3,7 @@ import axios from 'axios'
 import toast from './modules/toast'
 import router from '../router'
 
-axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
+
 
 // Create a new store instance.
 const store = createStore({
@@ -28,7 +28,7 @@ const store = createStore({
         setLoading(state, payload) {
             state.LOADING = payload
         },
-        setUserDetails(state, payload) {
+        setAuthInfo(state, payload) {
             state.user.loggedIn = true
 
             state.user.details = payload?.user
@@ -36,6 +36,7 @@ const store = createStore({
 
             localStorage.setItem('token', payload?.access_token)
             localStorage.setItem('user_details', JSON.stringify(payload?.user))
+            axios.defaults.headers.common['Authorization'] = `Bearer ${payload?.access_token}`;
         },
         setUnauthenticated() {
             localStorage.removeItem('token')
@@ -54,7 +55,7 @@ const store = createStore({
             return new Promise((resolve, reject) => {
                 axios.post(process.env.MIX_API_URL + 'login', payload)
                 .then((resp) => {
-                    commit('setUserDetails', resp?.data?.data)
+                    commit('setAuthInfo', resp?.data?.data)
                     dispatch('successToast', resp?.data?.msg)
 
                     router.push('/dashboard')
@@ -117,7 +118,7 @@ const store = createStore({
             return new Promise((resolve, reject) => {
                 axios.post(process.env.MIX_API_URL + 'system', payload)
                 .then((resp) => {
-                    // commit('setUserDetails', resp?.data?.data)
+                    // commit('setAuthInfo', resp?.data?.data)
                     dispatch('successToast', resp?.data?.msg)
                     
                     resolve(resp?.data)

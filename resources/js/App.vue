@@ -15,7 +15,8 @@
 </script>
 
 <template>
-  <SplashScreen :isLoading="isLoading" />
-  <RouterView v-if="!isLoading"/>
+  <!-- <SplashScreen :isLoading="isLoading" />
+  <RouterView v-if="!isLoading"/> -->
+  <RouterView/>
 </template>
     
